@@ -4,6 +4,7 @@ import About from '../components/About/About';
 import Products from '../components/Products/Products';
 import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
+import WhatsAppButton from '../components/WhatsAppButton/WhatsAppButton';
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

@@ -1,0 +1,74 @@
+.whatsappBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+
+.whatsappBtn:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.tooltip {
+  position: absolute;
+  right: 72px;
+  background: #0f172a;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-left-color: #0f172a;
+  border-right: 0;
+}
+
+.whatsappBtn:hover .tooltip {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .whatsappBtn {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 54px;
+    height: 54px;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .tooltip {
+    display: none;
+  }
+}
