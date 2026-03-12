@@ -1,0 +1,221 @@
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+    overflow: hidden;
+    background-color: var(--color-bg-main);
+    /* Cleaner background */
+}
+
+.heroBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.gradientOrb {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 70vw;
+    height: 70vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(29, 78, 216, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+    filter: blur(80px);
+    animation: floatOrb 15s ease-in-out infinite alternate;
+}
+
+.gradientOrb2 {
+    position: absolute;
+    bottom: -30%;
+    left: -20%;
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(15, 118, 110, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
+    filter: blur(80px);
+    animation: floatOrb 20s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatOrb {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-3vw, 5vh) scale(1.05);
+    }
+
+    100% {
+        transform: translate(5vw, -3vh) scale(1.1);
+    }
+}
+
+.heroContainer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-4xl);
+}
+
+.heroContent {
+    flex: 1;
+    max-width: 650px;
+}
+
+.heroBadge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.875rem;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--spacing-xl);
+    letter-spacing: 0.05em;
+    box-shadow: var(--shadow-sm);
+}
+
+.heroTitle {
+    font-size: 4.5rem;
+    /* Larger */
+    font-weight: 600;
+    /* Lighter weight */
+    line-height: 1.05;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text-main);
+    letter-spacing: -0.03em;
+    /* Tighter letter spacing for modern heading */
+}
+
+.heroTitle .highlight {
+    color: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 10px 30px rgba(29, 78, 216, 0.1);
+}
+
+.heroDescription {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-2xl);
+    max-width: 520px;
+    line-height: 1.7;
+}
+
+.heroActions {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.heroVisual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glassCard {
+    padding: var(--spacing-3xl) var(--spacing-2xl);
+    border-radius: var(--radius-xl);
+    max-width: 440px;
+    width: 100%;
+    transform: translateY(0);
+    transition: transform var(--transition-normal);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.glassCard:hover {
+    transform: translateY(-10px);
+}
+
+.statsRow {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--spacing-xl);
+}
+
+.statItem {
+    text-align: center;
+}
+
+.statLabel {
+    font-size: 2rem;
+    /* Larger numbers */
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+    letter-spacing: -0.02em;
+}
+
+.statValue {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+}
+
+.trustedBadge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    font-weight: 500;
+    color: var(--color-secondary-dark);
+    background: transparent;
+    padding: var(--spacing-sm) 0;
+    font-size: 0.95rem;
+}
+
+.shieldIcon {
+    font-size: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+    .heroTitle {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .heroContainer {
+        flex-direction: column;
+        text-align: center;
+        padding-top: var(--spacing-4xl);
+    }
+
+    .heroContent {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .heroTitle {
+        font-size: 3.5rem;
+    }
+
+    .heroActions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 2.75rem;
+    }
+}

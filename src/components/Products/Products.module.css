@@ -1,0 +1,133 @@
+.productsSection {
+    background-color: var(--color-bg-subtle);
+}
+
+.productsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4xl);
+    /* Increased gap */
+}
+
+.header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.sectionBadge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary-light);
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--spacing-lg);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.sectionTitle {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-main);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.description {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-2xl);
+    /* More breathing room */
+}
+
+.card {
+    background-color: var(--color-bg-main);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+    /* Extremely subtle starting shadow */
+    transition: all var(--transition-normal);
+    border: 1px solid var(--color-border);
+    /* Explicit refined border */
+    cursor: pointer;
+    z-index: 1;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: transparent;
+}
+
+.cardIcon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-xl);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    border-radius: var(--radius-2xl);
+    /* softer shape */
+    background-color: var(--color-bg-subtle);
+    color: var(--color-primary);
+    transition: all var(--transition-normal);
+}
+
+.card:hover .cardIcon {
+    background-color: var(--color-primary-light);
+    transform: scale(1.05);
+    /* Softer scale */
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    /* Lighter font weight */
+    color: var(--color-text-main);
+    transition: color var(--transition-normal);
+    letter-spacing: -0.01em;
+}
+
+.card:hover .cardTitle {
+    color: var(--color-primary);
+}
+
+/* Elegant bottom accent line instead of full background hover */
+.cardHoverEffect {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: center;
+    opacity: 0;
+    z-index: -1;
+    transition: transform var(--transition-normal), opacity var(--transition-normal);
+}
+
+.card:hover .cardHoverEffect {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .sectionTitle {
+        font-size: 2.75rem;
+    }
+}

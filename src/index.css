@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Modern Clean Palette */
+  --color-primary: #1d4ed8;
+  /* Deep Royal Blue */
+  --color-primary-dark: #1e3a8a;
+  --color-primary-light: #eff6ff;
+
+  --color-secondary: #0f766e;
+  /* Sophisticated Teal/Green */
+  --color-secondary-dark: #115e59;
+  --color-secondary-light: #f0fdf4;
+
+  --color-accent: #ea580c;
+  /* Muted Orange */
+
+  /* Neutrals - High Contrast, Clean */
+  --color-text-main: #0f172a;
+  --color-text-muted: #475569;
+  --color-bg-main: #ffffff;
+  --color-bg-subtle: #f8fafc;
+  /* Very light slate for contrast */
+  --color-bg-dark: #020617;
+
+  --color-border: #e2e8f0;
+
+  /* Typography */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing - Increased for more whitespace */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6rem;
+  --spacing-4xl: 8rem;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* Shadows - Softer, more diffuse */
+  --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.03), 0 2px 4px -2px rgb(0 0 0 / 0.03);
+  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.04), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+  --shadow-xl: 0 25px 50px -12px rgb(0 0 0 / 0.08);
+
+  /* Transitions */
+  --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 700ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-main);
+  background-color: var(--color-bg-main);
+  line-height: 1.7;
+  /* Increased line height */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  /* Slightly lighter base font weight for modern look */
+  line-height: 1.15;
+  color: var(--color-text-main);
+  letter-spacing: -0.02em;
+}
+
+strong {
+  font-weight: 600;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Base Container Utility */
+.container {
+  max-width: 1280px;
+  /* Slightly wider */
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-xl);
+  }
+}
+
+/* Glassmorphism utility - sleeker */
+.glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Buttons utility - minimalist */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  box-shadow: 0 4px 14px 0 rgba(29, 78, 216, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(29, 78, 216, 0.3);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-text-main);
+  border: 1px solid var(--color-border);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-bg-subtle);
+  border-color: var(--color-text-main);
+  transform: translateY(-2px);
+}
+
+.section-padding {
+  padding: var(--spacing-4xl) 0;
+}
+
+.text-center {
+  text-align: center;
+}
