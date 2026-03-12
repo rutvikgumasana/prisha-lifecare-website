@@ -1,35 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Modern Clean Palette */
-  --color-primary: #1d4ed8;
-  /* Deep Royal Blue */
-  --color-primary-dark: #1e3a8a;
-  --color-primary-light: #eff6ff;
+  /* Medical / Pharma Palette */
+  --color-primary: #0d9488;
+  --color-primary-dark: #0f766e;
+  --color-primary-light: #ccfbf1;
+  --color-primary-glow: rgba(13, 148, 136, 0.15);
 
-  --color-secondary: #0f766e;
-  /* Sophisticated Teal/Green */
-  --color-secondary-dark: #115e59;
-  --color-secondary-light: #f0fdf4;
+  --color-secondary: #1e40af;
+  --color-secondary-dark: #1e3a8a;
+  --color-secondary-light: #dbeafe;
 
-  --color-accent: #ea580c;
-  /* Muted Orange */
+  --color-accent: #f59e0b;
 
-  /* Neutrals - High Contrast, Clean */
+  /* Neutrals */
   --color-text-main: #0f172a;
-  --color-text-muted: #475569;
+  --color-text-muted: #64748b;
+  --color-text-light: #94a3b8;
   --color-bg-main: #ffffff;
-  --color-bg-subtle: #f8fafc;
-  /* Very light slate for contrast */
-  --color-bg-dark: #020617;
+  --color-bg-subtle: #f0fdfa;
+  --color-bg-section: #f8fafc;
+  --color-bg-dark: #042f2e;
 
   --color-border: #e2e8f0;
+  --color-border-light: #f1f5f9;
 
   /* Typography */
-  --font-heading: 'Outfit', sans-serif;
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  /* Spacing - Increased for more whitespace */
+  /* Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
@@ -39,18 +39,20 @@
   --spacing-3xl: 6rem;
   --spacing-4xl: 8rem;
 
-  /* Border Radius */
+  /* Radius */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
-  --radius-xl: 32px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
   --radius-full: 9999px;
 
-  /* Shadows - Softer, more diffuse */
-  --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.03), 0 2px 4px -2px rgb(0 0 0 / 0.03);
-  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.04), 0 4px 6px -4px rgb(0 0 0 / 0.04);
-  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
-  --shadow-xl: 0 25px 50px -12px rgb(0 0 0 / 0.08);
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 40px -8px rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 0 40px rgba(13, 148, 136, 0.12);
 
   /* Transitions */
   --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -66,25 +68,23 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-body);
   color: var(--color-text-main);
   background-color: var(--color-bg-main);
   line-height: 1.7;
-  /* Increased line height */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 500;
-  /* Slightly lighter base font weight for modern look */
+  font-weight: 600;
   line-height: 1.15;
   color: var(--color-text-main);
   letter-spacing: -0.02em;
@@ -110,15 +110,12 @@ img {
   display: block;
 }
 
-ul,
-ol {
+ul, ol {
   list-style: none;
 }
 
-/* Base Container Utility */
 .container {
   max-width: 1280px;
-  /* Slightly wider */
   margin: 0 auto;
   padding: 0 var(--spacing-md);
 }
@@ -129,23 +126,23 @@ ol {
   }
 }
 
-/* Glassmorphism utility - sleeker */
 .glass {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
-/* Buttons utility - minimalist */
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.875rem 2rem;
+  gap: 0.5rem;
+  padding: 0.9rem 2.25rem;
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.95rem;
   border-radius: var(--radius-full);
   border: none;
   cursor: pointer;
@@ -155,27 +152,28 @@ ol {
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: white;
-  box-shadow: 0 4px 14px 0 rgba(29, 78, 216, 0.2);
+  box-shadow: 0 4px 14px 0 rgba(13, 148, 136, 0.25);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-primary-dark);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, #134e4a 100%);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(29, 78, 216, 0.3);
+  box-shadow: 0 8px 25px rgba(13, 148, 136, 0.35);
 }
 
 .btn-outline {
   background-color: transparent;
   color: var(--color-text-main);
-  border: 1px solid var(--color-border);
+  border: 1.5px solid var(--color-border);
 }
 
 .btn-outline:hover {
   background-color: var(--color-bg-subtle);
-  border-color: var(--color-text-main);
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
   transform: translateY(-2px);
 }
 

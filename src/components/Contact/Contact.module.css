@@ -1,192 +1,198 @@
 .contactSection {
-    background-color: var(--color-bg-main);
-    position: relative;
+  background-color: var(--color-bg-main);
+  position: relative;
 }
 
 .contactContainer {
-    display: flex;
-    justify-content: space-between;
-    gap: var(--spacing-4xl);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-4xl);
 }
 
 .contactInfo {
-    flex: 1;
-    max-width: 500px;
+  flex: 1;
+  max-width: 500px;
 }
 
 .sectionBadge {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    background-color: transparent;
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary-light);
-    font-weight: 600;
-    font-size: 0.875rem;
-    border-radius: var(--radius-full);
-    margin-bottom: var(--spacing-lg);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.85rem;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  font-size: 0.8rem;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .sectionTitle {
-    font-size: 3.5rem;
-    margin-bottom: var(--spacing-lg);
-    color: var(--color-text-main);
-    letter-spacing: -0.03em;
-    line-height: 1.1;
+  font-size: 3rem;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text-main);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }
 
 .description {
-    font-size: 1.125rem;
-    color: var(--color-text-muted);
-    margin-bottom: var(--spacing-3xl);
-    /* increased spacing */
-    line-height: 1.8;
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-3xl);
+  line-height: 1.8;
 }
 
 .contactDetails {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
 }
 
 .detailItem {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--spacing-lg);
-    /* looser gap */
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
 }
 
 .iconBox {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: var(--radius-md);
-    /* Softer corners */
-    background-color: var(--color-bg-subtle);
-    /* More muted */
-    color: var(--color-primary);
-    font-size: 1.5rem;
-    flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  flex-shrink: 0;
 }
 
 .detailText h4 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-text-main);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text-main);
 }
 
 .detailText p,
 .detailText a {
-    color: var(--color-text-muted);
-    font-size: 1rem;
-    line-height: 1.6;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .detailText a {
-    font-weight: 500;
-    transition: color var(--transition-fast);
+  font-weight: 500;
+  transition: color var(--transition-fast);
 }
 
 .detailText a:hover {
-    color: var(--color-primary);
+  color: var(--color-primary);
 }
 
+/* Form */
 .contactFormContainer {
-    flex: 1;
-    max-width: 550px;
-    width: 100%;
+  flex: 1;
+  max-width: 550px;
+  width: 100%;
 }
 
 .formWrapper {
-    padding: var(--spacing-3xl) var(--spacing-2xl);
-    border-radius: var(--radius-2xl);
-    /* Softer radius */
-    box-shadow: var(--shadow-xl);
-    /* Softer, larger shadow */
-    background-color: var(--color-bg-main);
-    border: 1px solid var(--color-border);
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  background-color: var(--color-bg-main);
+  border: 1px solid var(--color-border-light);
 }
 
 .formWrapper h3 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: var(--spacing-xl);
-    color: var(--color-text-main);
-    letter-spacing: -0.02em;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-xl);
+  color: var(--color-text-main);
+  letter-spacing: -0.02em;
+}
+
+.successMessage {
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(13, 148, 136, 0.2);
+  line-height: 1.5;
 }
 
 .contactForm {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-    /* Extra breathing room between fields */
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
 }
 
 .formGroup {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
 }
 
 .formGroup label {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--color-text-muted);
-    /* Softer label color */
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
 }
 
 .formGroup input,
 .formGroup textarea {
-    width: 100%;
-    padding: 1rem 1.25rem;
-    /* larger, softer inputs */
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    background-color: var(--color-bg-subtle);
-    /* subtle background */
-    font-family: inherit;
-    font-size: 1rem;
-    color: var(--color-text-main);
-    transition: all var(--transition-fast);
+  width: 100%;
+  padding: 0.85rem 1.15rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-section);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+  transition: all var(--transition-fast);
 }
 
 .formGroup input::placeholder,
 .formGroup textarea::placeholder {
-    color: #94a3b8;
-    /* Tailwind slate-400 equivalent for softer placeholder */
+  color: #94a3b8;
 }
 
 .formGroup input:focus,
 .formGroup textarea:focus {
-    outline: none;
-    border-color: var(--color-primary);
-    background-color: var(--color-bg-main);
-    box-shadow: 0 0 0 3px var(--color-primary-light);
+  outline: none;
+  border-color: var(--color-primary);
+  background-color: var(--color-bg-main);
+  box-shadow: 0 0 0 3px var(--color-primary-glow);
 }
 
 .contactForm button {
-    margin-top: var(--spacing-md);
-    width: 100%;
-    padding: 1rem;
-    /* Bolder button */
-    font-size: 1.05rem;
+  margin-top: var(--spacing-md);
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.contactForm button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 @media (max-width: 991px) {
-    .contactContainer {
-        flex-direction: column;
-    }
+  .contactContainer {
+    flex-direction: column;
+  }
 
-    .contactInfo,
-    .contactFormContainer {
-        max-width: 100%;
-    }
+  .contactInfo,
+  .contactFormContainer {
+    max-width: 100%;
+  }
 
-    .sectionTitle {
-        font-size: 2.75rem;
-    }
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
 }

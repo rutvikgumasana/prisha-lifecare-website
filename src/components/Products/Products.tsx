@@ -1,20 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { collection, getDocs, orderBy, query, limit } from 'firebase/firestore';
+import { db } from '../../firebase';
 import styles from './Products.module.css';
 
-const categories = [
-    { id: 1, title: 'Tablet / Capsules', icon: '💊' },
-    { id: 2, title: 'Soft Gel Capsules', icon: '💊' },
-    { id: 3, title: 'Injectables', icon: '💉' },
-    { id: 4, title: 'Syrup / Suspension', icon: 'bottles' }, // placeholder
-    { id: 5, title: 'Dry Syrups', icon: '🍼' },
-    { id: 6, title: 'Drops / Spray', icon: '💧' },
-    { id: 7, title: 'Ointments', icon: '🩹' },
-    { id: 8, title: 'Ayurvedic Preparation', icon: '🌿' },
-    { id: 9, title: 'Cardiac Products', icon: '❤️' },
-    { id: 10, title: 'Gummies', icon: '🍬' },
-];
+interface Product {
+    id: string;
+    title: string;
+    description: string;
+    imageBase64: string;
+}
 
 const Products: React.FC = () => {
+    const [products, setProducts] = useState<Product[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const q = query(collection(db, 'products'), orderBy('createdAt', 'desc'), limit(6));
+                const snapshot = await getDocs(q);
+                const productsList = snapshot.docs.map(docSnap => ({
+                    id: docSnap.id,
+                    ...docSnap.data()
+                })) as Product[];
+                setProducts(productsList);
+            } catch (error) {
+                console.error('Error fetching products:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchProducts();
+    }, []);
+
     return (
         <section id="products" className={`section-padding ${styles.productsSection}`}>
             <div className={`container ${styles.productsContainer}`}>
@@ -27,17 +46,36 @@ const Products: React.FC = () => {
                     </p>
                 </div>
 
-                <div className={styles.grid}>
-                    {categories.map((category) => (
-                        <div key={category.id} className={styles.card}>
-                            <div className={styles.cardIcon}>
-                                {category.icon === 'bottles' ? '🧪' : category.icon}
-                            </div>
-                            <h3 className={styles.cardTitle}>{category.title}</h3>
-                            <div className={styles.cardHoverEffect}></div>
+                {loading ? (
+                    <p className={styles.loadingText}>Loading products...</p>
+                ) : products.length === 0 ? (
+                    <p className={styles.loadingText}>No products available yet.</p>
+                ) : (
+                    <>
+                        <div className={styles.productGrid}>
+                            {products.map((product) => (
+                                <div key={product.id} className={styles.productCard}>
+                                    <div className={styles.productImage}>
+                                        <img src={product.imageBase64} alt={product.title} />
+                                    </div>
+                                    <div className={styles.productInfo}>
+                                        <h4 className={styles.productTitle}>{product.title}</h4>
+                                        <p className={styles.productDesc}>{product.description}</p>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
+
+                        <div className={styles.viewAllWrapper}>
+                            <Link to="/products" className="btn btn-primary">
+                                View All Products
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                            </Link>
+                        </div>
+                    </>
+                )}
 
             </div>
         </section>

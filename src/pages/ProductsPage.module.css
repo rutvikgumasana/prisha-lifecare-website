@@ -1,0 +1,253 @@
+/* Page Hero */
+.pageHero {
+  position: relative;
+  padding: 10rem 0 5rem;
+  background: linear-gradient(165deg, #042f2e 0%, #0f4240 35%, #134e4a 70%, #0d3d3b 100%);
+  overflow: hidden;
+  text-align: center;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bgPattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+.gradientOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(13, 148, 136, 0.15) 0%, transparent 60%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #99f6e4;
+  margin-bottom: 1.25rem;
+  backdrop-filter: blur(8px);
+}
+
+.pageTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+}
+
+.pageDesc {
+  font-size: 1.15rem;
+  color: #94a3b8;
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Products Section */
+.productsSection {
+  padding: 5rem 0;
+  background: var(--color-bg-section);
+}
+
+.productCount {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  margin-bottom: 2rem;
+  padding-left: 0.25rem;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.75rem;
+}
+
+.productCard {
+  background-color: var(--color-bg-main);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--color-border-light);
+  transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.productCard::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.productCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.08);
+  border-color: transparent;
+}
+
+.productCard:hover::after {
+  transform: scaleX(1);
+}
+
+.productImage {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background: var(--color-bg-section);
+}
+
+.productImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.productCard:hover .productImage img {
+  transform: scale(1.08);
+}
+
+.productInfo {
+  padding: 1.5rem 1.75rem 1.75rem;
+}
+
+.productTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.productDesc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+/* Loading & Empty States */
+.loadingState {
+  text-align: center;
+  padding: 4rem 0;
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.emptyState h3 {
+  font-size: 1.5rem;
+  color: var(--color-text-main);
+  margin-bottom: 0.5rem;
+}
+
+.emptyState p {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 0 0 5rem;
+  background: var(--color-bg-section);
+}
+
+.ctaBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 3.5rem;
+  background: linear-gradient(135deg, #042f2e 0%, #134e4a 100%);
+  border-radius: 28px;
+  gap: 2rem;
+}
+
+.ctaContent h2 {
+  font-size: 1.75rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.ctaContent p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.ctaActions {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 991px) {
+  .pageTitle {
+    font-size: 2.75rem;
+  }
+
+  .ctaBanner {
+    flex-direction: column;
+    text-align: center;
+    padding: 2.5rem 2rem;
+  }
+
+  .ctaActions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ctaActions a {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageHero {
+    padding: 8rem 0 3.5rem;
+  }
+
+  .pageTitle {
+    font-size: 2.25rem;
+  }
+
+  .productGrid {
+    grid-template-columns: 1fr;
+  }
+}

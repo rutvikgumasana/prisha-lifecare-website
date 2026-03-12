@@ -9,12 +9,18 @@ const Footer: React.FC = () => {
 
                     <div className={styles.footerBrand}>
                         <div className={styles.logo}>
-                            <span className={styles.logoText}>Prisha</span>
-                            <span className={styles.logoHighlight}>lifecare</span>
+                            <a href="/">
+                                <img src="/prisha-logo.png" alt="Prisha Lifecare" className={styles.logoImg} />
+                            </a>
                         </div>
                         <p className={styles.brandDescription}>
                             Passion for better health. Ensuring supply and export of generic and branded medicines globally.
                         </p>
+                        <div className={styles.socialLinks}>
+                            <a href="https://www.instagram.com/prisha_lifecare/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Instagram">
+                                📸
+                            </a>
+                        </div>
                     </div>
 
                     <div className={styles.footerLinksGroup}>
@@ -28,12 +34,12 @@ const Footer: React.FC = () => {
                     </div>
 
                     <div className={styles.footerLinksGroup}>
-                        <h4 className={styles.footerHeading}>Categories</h4>
+                        <h4 className={styles.footerHeading}>Segments</h4>
                         <ul className={styles.footerLinks}>
-                            <li><a href="#products">Tablet / Capsules</a></li>
+                            <li><a href="#products">Tablets & Capsules</a></li>
                             <li><a href="#products">Injectables</a></li>
-                            <li><a href="#products">Syrup / Suspension</a></li>
-                            <li><a href="#products">Ayurvedic</a></li>
+                            <li><a href="#products">Syrups & Suspensions</a></li>
+                            <li><a href="#products">Ayurvedic Range</a></li>
                         </ul>
                     </div>
 
@@ -41,15 +47,19 @@ const Footer: React.FC = () => {
                         <h4 className={styles.footerHeading}>Contact Us</h4>
                         <div className={styles.contactItem}>
                             <span className={styles.contactIcon}>📍</span>
-                            <p>Ahmedabad (Guj.), India</p>
+                            <p>Dwarkesh Estate, Office no. 7, Ground Floor, Aslali, Ahmedabad - 382 427</p>
                         </div>
                         <div className={styles.contactItem}>
                             <span className={styles.contactIcon}>📞</span>
-                            <a href="tel:+919909976108">+91 99099 76108</a>
+                            <div>
+                                <a href="tel:+916352953127">+91 63529 53127</a>
+                                <br />
+                                <a href="tel:+917700077779">+91 77000 77779</a>
+                            </div>
                         </div>
                         <div className={styles.contactItem}>
                             <span className={styles.contactIcon}>✉️</span>
-                            <a href="mailto:info@prishalifecare.com">info@prishalifecare.com</a>
+                            <a href="mailto:prishalifecare99@gmail.com">prishalifecare99@gmail.com</a>
                         </div>
                     </div>
                 </div>
@@ -58,11 +68,9 @@ const Footer: React.FC = () => {
                     <p className={styles.copyright}>
                         &copy; {new Date().getFullYear()} Prishalifecare. All Rights Reserved.
                     </p>
-                    <div className={styles.socialLinks}>
-                        <a href="https://www.instagram.com/prisha_lifecare/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Instagram">
-                            📸
-                        </a>
-                    </div>
+                    <p className={styles.madeWith}>
+                        Made with ❤️ in India
+                    </p>
                 </div>
             </div>
         </footer>

@@ -1,0 +1,17 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Products: anyone can read, only authenticated users can write
+    match /products/{productId} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null;
+    }
+
+    // Contacts: anyone can create (submit form), only authenticated users can read/delete
+    match /contacts/{contactId} {
+      allow create: if true;
+      allow read, delete: if request.auth != null;
+    }
+  }
+}

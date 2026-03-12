@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
 const Header: React.FC = () => {
@@ -21,31 +22,30 @@ const Header: React.FC = () => {
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.headerContainer}`}>
-        {/* Logo */}
         <div className={styles.logo}>
-          <a href="/">
-            <span className={styles.logoText}>Prisha</span>
-            <span className={styles.logoHighlight}>lifecare</span>
-          </a>
+          <Link to="/">
+            <img src="/prisha-logo.png" alt="Prisha Lifecare" className={styles.logoImg} />
+          </Link>
         </div>
 
-        {/* Desktop Navigation */}
         <nav className={`${styles.nav} ${mobileMenuOpen ? styles.navOpen : ''}`}>
           <ul className={styles.navList}>
-            <li><a href="#home" onClick={() => setMobileMenuOpen(false)}>Home</a></li>
-            <li><a href="#about" onClick={() => setMobileMenuOpen(false)}>About Us</a></li>
-            <li><a href="#products" onClick={() => setMobileMenuOpen(false)}>Products</a></li>
-            <li><a href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact Us</a></li>
+            <li><a href="/#home" onClick={() => setMobileMenuOpen(false)}>Home</a></li>
+            <li><a href="/#about" onClick={() => setMobileMenuOpen(false)}>About Us</a></li>
+            <li><Link to="/products" onClick={() => setMobileMenuOpen(false)}>Products</Link></li>
+            <li><a href="/#contact" onClick={() => setMobileMenuOpen(false)}>Contact Us</a></li>
           </ul>
           <div className={styles.navActions}>
-            <a href="#contact" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>
+            <a href="tel:+916352953127" className={styles.phoneLink}>
+              📞 +91 63529 53127
+            </a>
+            <a href="/#contact" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>
               Get in Touch
             </a>
           </div>
         </nav>
 
-        {/* Mobile menu toggle */}
-        <button 
+        <button
           className={`${styles.mobileToggle} ${mobileMenuOpen ? styles.active : ''}`}
           onClick={toggleMenu}
           aria-label="Toggle menu"

@@ -1,178 +1,173 @@
 .footer {
-    background-color: var(--color-bg-dark);
-    color: var(--color-text-muted);
-    /* Softer default text color */
-    padding: var(--spacing-4xl) 0 var(--spacing-xl);
-    margin-top: auto;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    /* very faint top border */
+  background: linear-gradient(180deg, #042f2e 0%, #022322 100%);
+  color: var(--color-text-muted);
+  padding: var(--spacing-4xl) 0 var(--spacing-xl);
+  margin-top: auto;
 }
 
 .footerContainer {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .footerTop {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
-    gap: var(--spacing-4xl);
-    /* Increased gap for cleanliness */
-    margin-bottom: var(--spacing-4xl);
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.75fr;
+  gap: var(--spacing-4xl);
+  margin-bottom: var(--spacing-4xl);
 }
 
+/* Brand */
 .footerBrand {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
 }
 
-.logo {
-    font-family: var(--font-heading);
-    font-size: 1.75rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    color: var(--color-bg-main);
+.logo a {
+  display: inline-block;
 }
 
-.logoHighlight {
-    color: var(--color-primary);
-    /* Switching back to primary for brand pop in dark context */
+.logoImg {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 .brandDescription {
-    color: #94a3b8;
-    /* slate-400 */
-    font-size: 0.95rem;
-    max-width: 320px;
-    line-height: 1.7;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  max-width: 320px;
+  line-height: 1.7;
 }
 
+.socialLinks {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: 0.5rem;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  font-size: 1.2rem;
+  transition: all var(--transition-normal);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.socialIcon:hover {
+  background: rgba(13, 148, 136, 0.15);
+  color: var(--color-primary);
+  border-color: rgba(13, 148, 136, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Links */
 .footerHeading {
-    font-size: 1rem;
-    color: var(--color-bg-main);
-    margin-bottom: var(--spacing-lg);
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+  font-size: 0.85rem;
+  color: white;
+  margin-bottom: var(--spacing-lg);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .footerLinks {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    /* More airy link list */
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
 }
 
 .footerLinks a {
-    color: #94a3b8;
-    font-size: 0.95rem;
-    transition: color var(--transition-fast), transform var(--transition-fast);
-    display: inline-block;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+  display: inline-block;
 }
 
 .footerLinks a:hover {
-    color: var(--color-primary-light);
-    transform: translateX(4px);
-    /* Smooth layout shift instead of padding */
+  color: #5eead4;
+  transform: translateX(3px);
 }
 
+/* Contact */
 .footerContact {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-    /* More airy */
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
 }
 
 .contactItem {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--spacing-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
 }
 
 .contactIcon {
-    font-size: 1.25rem;
-    color: var(--color-bg-main);
-    /* Pop icon color */
-    opacity: 0.8;
+  font-size: 1.1rem;
+  opacity: 0.8;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .contactItem p,
 .contactItem a {
-    color: #94a3b8;
-    font-size: 0.95rem;
-    line-height: 1.5;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .contactItem a {
-    transition: color var(--transition-fast);
+  transition: color var(--transition-fast);
 }
 
 .contactItem a:hover {
-    color: var(--color-primary-light);
+  color: #5eead4;
 }
 
+/* Bottom */
 .footerBottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: var(--spacing-2xl);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    /* elegant separator */
-    flex-wrap: wrap;
-    gap: var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--spacing-2xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
 }
 
 .copyright {
-    color: #64748b;
-    /* slate-500 */
-    font-size: 0.875rem;
+  color: #475569;
+  font-size: 0.85rem;
 }
 
-.socialLinks {
-    display: flex;
-    gap: var(--spacing-md);
-}
-
-.socialIcon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: var(--radius-md);
-    /* rounded square instead of circle */
-    background-color: rgba(255, 255, 255, 0.05);
-    color: #cbd5e1;
-    /* slate-300 */
-    font-size: 1.25rem;
-    transition: all var(--transition-normal);
-    border: 1px solid transparent;
-}
-
-.socialIcon:hover {
-    background-color: var(--color-bg-dark);
-    color: var(--color-primary-light);
-    border-color: var(--color-primary);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.2);
+.madeWith {
+  color: #475569;
+  font-size: 0.85rem;
 }
 
 @media (max-width: 991px) {
-    .footerTop {
-        grid-template-columns: 1fr 1fr;
-        gap: var(--spacing-3xl);
-    }
+  .footerTop {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3xl);
+  }
 }
 
 @media (max-width: 576px) {
-    .footerTop {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-2xl);
-    }
+  .footerTop {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+  }
 
-    .footerBottom {
-        flex-direction: column;
-        text-align: center;
-    }
+  .footerBottom {
+    flex-direction: column;
+    text-align: center;
+  }
 }
